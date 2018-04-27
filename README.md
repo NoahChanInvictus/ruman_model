@@ -51,16 +51,11 @@ ggdr.py   将公告导入es
 
 ############lys###########
 eastMoneyDaily.py 从东方财富上爬取每天的大宗交易的数据，存到ES数据库（这个必须每天晚上8-9点更新）
-
-trans-mysqldaily.py  将大宗交易的数据从ES数据库里存到Mysql数据库中
-
-transfrequency-daily.py 统计每只股票每天的大宗交易数目
-     ts.get_today_all() 输入：无      输出：当天的所有股票的名称、收盘价等基本信息
-
-上面三个文件一定要按照先后顺序严格运行
+trans_stat.py 统计大宗交易频率
 
 
-announcement-daily.py 从ES数据库中统计每只股票每天每种类型公告的数目
+
+announcement_stat.py 从ES数据库中统计每只股票每天每种类型公告的数目
       getkind(line)  输入：每一条公告     输出：该公告属于那种类型
 
 manipulate_influence.py  在统计疑似操纵股票中，统计股票的涨幅

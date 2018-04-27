@@ -7,7 +7,7 @@ from elasticsearch.helpers import bulk  #, streaming_bulk
 
 
 # ES
-ES_HOST = '219.224.134.213'
+ES_HOST = '219.224.134.214'
 ES_PORT = 9202  
 
 INDEX_BBS = 'bbs'
@@ -43,6 +43,8 @@ TABLE_MARKET_DAILY = 'market_daily'
 TABLE_LARGE_TRANS = 'large_trans'
 TABLE_HOLDERS = 'holders'
 TABLE_ANNOUNCE = 'announce'
-TABLE_FREQUENCY='transaction_stat'
+TABLE_FREQUENCY = 'transaction_stat'
+TABLE_TRANS_STAT = 'transaction_stat'
+TABLE_STOCK_LIST = 'stock_list'
 
    
