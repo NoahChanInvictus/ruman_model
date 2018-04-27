@@ -136,7 +136,8 @@ def ggdr_today(theday=today()):
         day = int(theday.split('-')[2])
         basic_info_insert(gonggao_dict(gongsi,year,month,day,year,month,day))
         a -= 1
-        print '还剩',a,'家'
+        if a % 100 == 0:
+            print '还剩',a,'家'
 
 if __name__ == '__main__':
     ggdr(2018,3,2,2018,3,4)

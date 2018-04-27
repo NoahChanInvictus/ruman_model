@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
+import sys
+reload(sys)
+sys.path.append('../')
+from config import ES_HOST,ES_PORT
 import requests
 import json
 import time
 import elasticsearch
 from elasticsearch import Elasticsearch
 
-es = Elasticsearch('219.224.134.214:9202',timeout=600)
+es = Elasticsearch([{'host':ES_HOST,'port':ES_PORT}])
+
 def eastMoney(theday):
 	#today = time.strftime("%Y-%m-%d",time.localtime(int(time.time())))
 	today = theday
@@ -15,8 +19,9 @@ def eastMoney(theday):
 	todayUrl = "http://dcfm.eastmoney.com/em_mutisvcexpandinterface/api/js/get?type=DZJYXQ&token=70f12f2f4f091e459a279469fe49eca5&st=SECUCODE&p=%s&ps=5000&filter=(Stype='EQA')(TDATE=^{}^)".format(today)
 
 	for offset in range(1,11):
-		print(todayUrl%offset)
+		# print(todayUrl%offset)
 		r = requests.get(todayUrl%offset)
+		# print(r.text)
 		j = json.loads(r.text)
 		if j:
 			for each in j:

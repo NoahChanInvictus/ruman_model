@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 import tushare as ts
 import sys
+reload(sys)
+sys.path.append('../')
 import codecs
 import csv
 import math
@@ -11,7 +13,7 @@ from sql_utils import *
 import time
 import datetime
 from time_utils import *
-#from WindPy import *
+from WindPy import *
 
 def what_quarter(theday):
     year = int(theday.split('-')[0])
